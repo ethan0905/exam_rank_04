@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   microshell.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esafar <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:39:25 by esafar            #+#    #+#             */
-/*   Updated: 2022/05/30 18:10:48 by esafar           ###   ########.fr       */
+/*   Updated: 2022/05/30 18:13:58 by esafar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	exit_cd_2(char *str)
 	return (EXIT_FAILURE);
 }
 
-/*--------------------------*/
+/*---------PARSING----------*/
 
 int size_argv(char **argv)
 {
@@ -149,6 +149,8 @@ int parser_argv(t_test **test, char **av)
 	ft_lstadd_back(test, new);
 	return (new->size);
 }
+
+/*---------EXEC---------*/
 
 void	exec_cmd(t_test *tmp, char **env)
 {
@@ -210,6 +212,8 @@ void	exec_cmds(t_test *test, char **env)
 	}
 }
 
+/*-----------------------*/
+
 void	free_all(t_test *test)
 {
 	t_test *tmp;
@@ -254,35 +258,3 @@ int main(int ac, char **av, char **env)
 		free_all(test);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
